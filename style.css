@@ -1,0 +1,421 @@
+*{
+    box-sizing: border-box;
+}
+:root {
+    --primary-bg: rgb(249, 104, 0);
+    --primary-color: rgb(212 246 204);
+    --secondary-bg: rgb(212 246 204);
+    --secondary-color: rgb(249 104 0);
+    --navy-color: rgb(0, 56, 101);
+}
+body {
+    font-family: nunito, sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+}
+/* ==============================
+======= HEADER SECTION ======== */
+
+/* NAVIGATION BAR */
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 100px;
+}
+nav {
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-bg);
+    color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav .logo  {
+    text-transform: uppercase;
+    padding: 0 100px;
+    font-weight: bold;
+    font-size: 24px;
+}
+nav .nav-links ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 50px;
+}
+nav .nav-links ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: .3s ease-in-out;
+}
+nav .nav-links ul li a:hover {
+    padding-bottom: 2px;
+    border-bottom:2px solid var(--navy-color) ;
+   
+}
+
+
+
+
+
+
+
+
+/* ABOUT Image, Name And a Brief Bio*/
+.about {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--secondary-bg);
+
+}
+.about .abt-img img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+div.about .abt-text {
+    text-align: center;
+    line-height: 1.5;
+    width: 400px;
+}
+div.abt-text h1 {
+    line-height: 1;
+    margin-bottom: 0;
+    color: var(--secondary-color);
+
+}
+
+div.abt-text p::after{
+    content: '';
+    background: url(./img/nigeria-flag-icon.svg) center center /30px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+/* ==============================
+======= lt-rt SECTION ======== */
+section.lt-rt {
+    width: 100%;
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    background-color: var(--primary-bg);
+    color: var(--primary-color);
+}
+section.lt-rt .left-contain,
+section.lt-rt .right-contain {
+    width: 50%;
+    padding: 0 100px;
+}
+section.lt-rt .left-contain h2,
+section.lt-rt .right-contain p:nth-child(1){
+    margin-bottom: 50px;
+}
+
+section.lt-rt .right-contain p{
+    font-weight: bold;
+    white-space: pre-line;
+    line-height: 1.5;
+}
+
+/* ==============================
+========= SECTION TWO ========= */
+section {
+    width: 100%;
+    background-color: var(--secondary-bg);
+    padding: 50px;
+    color: var(--secondary-color);
+}
+div.services {
+    width: 100%;
+    padding: 50px 80px;
+}
+div.services h2{
+    margin-bottom: 70px;
+}
+div.services .cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 5%;
+}
+div.services .card {
+    width: 30%;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--secondary-color);
+    background: linear-gradient(145deg, rgb(190, 220, 183), rgb(227, 255, 218));
+    box-shadow:  20px 20px 60px #b4d1ad,
+             -20px -20px 60px #f4ffeb;
+}
+div.services .card:hover {
+    color: var(--navy-color);
+    background: linear-gradient(145deg, hsl(105, 100%, 93%), hsl(109, 35%, 79%));
+    box-shadow:  20px 20px 60px #b4d1ad,
+             -20px -20px 60px #f4ffeb;
+}
+
+/* ==============================
+======= FOOTER SECTION ======= */
+footer {
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
+}
+footer .social-links{
+    display: flex;
+    justify-content: center;
+    /* gap: 10px; */
+}
+footer i {
+    width: 30px;
+    color: var(--primary-color);
+}
+footer p:nth-child(1){
+    white-space: pre-line;
+    line-height: 2;
+}
+
+
+
+/* ====================================================
+========= HAMBURGER MENU FOR SMALL VIEW PORT========= */
+nav .hamburger-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+}
+nav .hamburger-container .hamburger {
+    width: 40px;
+    height: 40px;
+}
+nav .hamburger-container .hamburger div {
+    width: 70%;
+    height: 2px;
+    position: relative;
+    left: 0;
+    top: 20px;
+    background-color: var(--navy-color);
+    /* z-index: 4; */
+    transition: .2s ease-in-out;
+}
+nav .hamburger-container .hamburger div::after,
+nav .hamburger-container .hamburger div::before {
+    content:'' ;
+    width: 100%;
+    height: 2px;
+    background-color: var(--navy-color);
+    position: absolute;
+    top: 8px;
+}
+nav .hamburger-container .hamburger div::before {
+    top: -8px;
+}
+nav .hamburger-container input#checks{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 100%;
+    height: 80%;
+    z-index: 500;
+    opacity: 0;
+}
+nav .hamburger-container input#checks:hover{
+    cursor: pointer;
+}
+nav .hamburger-container #checks:checked ~ .hamburger div {
+    transform:rotate(30deg);
+    background-color: var(--secondary-bg);
+}
+nav .hamburger-container #checks:checked ~ .hamburger div::after,
+nav .hamburger-container #checks:checked ~ .hamburger div::before {
+    transform: rotate(-60deg);
+    top: 0;
+    background-color: var(--secondary-bg);
+}
+nav .hamburger-nav-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    background-color: var(--navy-color);
+    height: 100vh;
+    width: 300px;
+    /* z-index: 2; */
+    box-shadow: -10px 0 40px rgb(48, 43, 43);
+}
+nav .hamburger-nav-links ul {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 80px;
+    transition: .3s ease-in-out;
+   
+}
+nav .hamburger-nav-links ul li{
+    padding: 20px;
+    list-style: none;
+}
+nav .hamburger-nav-links ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: .3s ease-in-out;
+
+}
+nav .hamburger-nav-links ul li a:hover{
+    color: var(--navy-color);
+    border-bottom: 2px solid var(--navy-color);
+}
+nav .hamburger-nav-links ul li:hover {
+   background-color: var(--primary-bg);
+   width: 100%;
+}
+
+
+
+/* ==============================
+======= MEDIA QUERIES ======== */
+@media (max-width: 991px){
+    nav {
+        width: 100%;
+        padding: 10px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--primary-bg);
+        color: var(--primary-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    
+    nav .logo  {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+        padding: 0;
+    }
+    nav .nav-links {
+        display: none;
+    }
+    nav .hamburger-container {
+        display: block;
+    }
+    nav .hamburger-container #checks:checked ~ .hamburger-nav-links {
+        display: block;
+    }
+
+
+
+
+    /* ==============================
+    ======= lt-rt SECTION ======== */
+    section.lt-rt {
+        width: 100%;
+        padding: 100px 50px;
+        flex-direction: column;
+        text-align: center;
+    }
+    section.lt-rt .left-contain,
+    section.lt-rt .right-contain {
+        width: 100%;
+    }
+
+
+    /* ==============================
+    ========= SECTION TWO ========= */
+    section {
+        width: 100%;
+        background-color: var(--secondary-bg);
+        padding: 50px 0;
+        color: var(--secondary-color);
+    }
+    div.services {
+        width: 100%;
+        padding: 0 80px;
+    }
+    div.services h2{
+        margin-bottom: 70px;
+    }
+    div.services .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    div.services .card {
+        width: 100%;
+        padding: 30px 20px;
+     
+    }
+
+    
+}
+
+@media (max-width: 475px){
+    div.about .abt-text{
+        width: 300px;
+    }
+    div.abt-text h1{
+        font-size: 24px;
+    }
+
+
+    section.lt-rt {
+        width: 100%;
+        padding: 50px 0px;
+        flex-direction: column;
+        text-align: center;
+    }
+    section.lt-rt .left-contain,
+    section.lt-rt .right-contain {
+        padding: 0 20px;
+    }
+    section.lt-rt .left-contain h2,
+    section.lt-rt .right-contain p:nth-child(1){
+        margin-bottom: 0;
+    }
+
+    /* ==============================
+    ========= SECTION TWO ========= */
+    section {
+        width: 100%;
+        background-color: var(--secondary-bg);
+        padding: 50px 0;
+        color: var(--secondary-color);
+    }
+    div.services {
+        width: 100%;
+        padding: 0 ;
+    }
+    div.services h2{
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    div.services .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    div.services .card {
+        width: 100%;
+        padding: 30px 20px;
+     
+    }
+}
